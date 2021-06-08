@@ -13,6 +13,7 @@
 		B561BE07266F782F00691D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B561BE06266F782F00691D21 /* Assets.xcassets */; };
 		B561BE0A266F782F00691D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B561BE08266F782F00691D21 /* LaunchScreen.storyboard */; };
 		B561BE13266F7BC800691D21 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561BE12266F7BC800691D21 /* UIView + Extension.swift */; };
+		B561BE18266F86E000691D21 /* NewsCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561BE16266F83B600691D21 /* NewsCompositionalLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B561BE09266F782F00691D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B561BE0B266F782F00691D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B561BE12266F7BC800691D21 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		B561BE16266F83B600691D21 /* NewsCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCompositionalLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +58,11 @@
 		B561BDFC266F782D00691D21 /* News-App */ = {
 			isa = PBXGroup;
 			children = (
+				B561BE15266F839D00691D21 /* Layout */,
+				B561BE14266F7CAA00691D21 /* View */,
 				B561BE11266F7BA900691D21 /* Supporting files */,
-				B561BDFD266F782D00691D21 /* AppDelegate.swift */,
-				B561BDFF266F782D00691D21 /* SceneDelegate.swift */,
-				B561BE01266F782D00691D21 /* ViewController.swift */,
 				B561BE06266F782F00691D21 /* Assets.xcassets */,
 				B561BE08266F782F00691D21 /* LaunchScreen.storyboard */,
-				B561BE0B266F782F00691D21 /* Info.plist */,
 			);
 			path = "News-App";
 			sourceTree = "<group>";
@@ -71,8 +71,27 @@
 			isa = PBXGroup;
 			children = (
 				B561BE12266F7BC800691D21 /* UIView + Extension.swift */,
+				B561BDFD266F782D00691D21 /* AppDelegate.swift */,
+				B561BDFF266F782D00691D21 /* SceneDelegate.swift */,
+				B561BE0B266F782F00691D21 /* Info.plist */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		B561BE14266F7CAA00691D21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B561BE01266F782D00691D21 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B561BE15266F839D00691D21 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				B561BE16266F83B600691D21 /* NewsCompositionalLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B561BE18266F86E000691D21 /* NewsCompositionalLayout.swift in Sources */,
 				B561BE13266F7BC800691D21 /* UIView + Extension.swift in Sources */,
 				B561BE02266F782D00691D21 /* ViewController.swift in Sources */,
 				B561BDFE266F782D00691D21 /* AppDelegate.swift in Sources */,
@@ -288,7 +308,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J74H2E8F8;
-				INFOPLIST_FILE = "News-App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/News-App/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J74H2E8F8;
-				INFOPLIST_FILE = "News-App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/News-App/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
