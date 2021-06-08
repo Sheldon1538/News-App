@@ -26,6 +26,7 @@
 		B58A8CF9266F99FD00D3BF71 /* NewsArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CF8266F99FD00D3BF71 /* NewsArticleViewModel.swift */; };
 		B58A8CFB266F9FE000D3BF71 /* NewsArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CFA266F9FE000D3BF71 /* NewsArticleCollectionViewCell.swift */; };
 		B58A8CFD266FA05D00D3BF71 /* UICollectionViewCell + Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CFC266FA05D00D3BF71 /* UICollectionViewCell + Identifier.swift */; };
+		B58A8CFF266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CFE266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B58A8CF8266F99FD00D3BF71 /* NewsArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleViewModel.swift; sourceTree = "<group>"; };
 		B58A8CFA266F9FE000D3BF71 /* NewsArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		B58A8CFC266FA05D00D3BF71 /* UICollectionViewCell + Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Identifier.swift"; sourceTree = "<group>"; };
+		B58A8CFE266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				B561BE01266F782D00691D21 /* ViewController.swift */,
 				B58A8CFA266F9FE000D3BF71 /* NewsArticleCollectionViewCell.swift */,
+				B58A8CFE266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				B561BE00266F782D00691D21 /* SceneDelegate.swift in Sources */,
 				B579A161266F8B1000BAB6ED /* NewsResponse.swift in Sources */,
 				B579A16A266F8C6900BAB6ED /* APIRequest.swift in Sources */,
+				B58A8CFF266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift in Sources */,
 				B579A168266F8C4600BAB6ED /* APIClient.swift in Sources */,
 				B58A8CF9266F99FD00D3BF71 /* NewsArticleViewModel.swift in Sources */,
 			);

@@ -29,14 +29,18 @@ final class TrendingNewsViewModel: TrendingNewsViewModelProtocol {
     
     init(apiService: APIClient) {
         self.apiService = apiService
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(fetchNewsArticles), userInfo: nil, repeats: true)
     }
     
-    func fetchNewsArticles() {
+    @objc func fetchNewsArticles() {
+        print(#function)
         let request = TrendingNewsRequest()
         apiService.send(request) { result in
             switch result {
             case .success(let response):
-                self.newsArticles = response.articles
+                if response.articles != self.newsArticles {
+                    self.newsArticles = response.articles
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
