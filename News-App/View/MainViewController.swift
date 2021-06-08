@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     private lazy var newsCompLayout = NewsCompositionalLayout()
     private lazy var dataSource = makeDataSource()
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     }
 }
 
-private extension ViewController {
+private extension MainViewController {
     
     func setup() {
         view.backgroundColor = #colorLiteral(red: 0.03453363478, green: 0.1120286658, blue: 0.3060317636, alpha: 1)
@@ -101,13 +101,13 @@ private extension ViewController {
     }
 }
 
-extension ViewController {
+extension MainViewController {
     fileprivate enum Section {
         case main
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         pushDetailsController(newsArticle: newsArticles[indexPath.row])
     }

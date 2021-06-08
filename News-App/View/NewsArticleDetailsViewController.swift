@@ -60,6 +60,8 @@ class NewsArticleDetailsViewController: UIViewController {
 
 extension NewsArticleDetailsViewController {
     private func buildSections() -> [NewsArticleDetailsSection] {
+        /// If article does not have a link to the image - controller will consist of 2 sections (name, description)
+        /// Otherwise method returns 3 sections (image, name, description)
         if article.imageURL == nil {
             return [.title, .description]
         } else {
