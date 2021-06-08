@@ -28,11 +28,11 @@ final class NewsArticleViewModel: Hashable {
     }
     
     var articleDescription: String {
-        return newsArticle.description ?? "Article description is not available"
+        return newsArticle.content ?? "Article description is not available"
     }
     
     static func == (lhs: NewsArticleViewModel, rhs: NewsArticleViewModel) -> Bool {
-        lhs.url == rhs.url
+        (lhs.url == rhs.url) && (lhs.articleDescription == rhs.articleDescription)
     }
     
     func hash(into hasher: inout Hasher) {

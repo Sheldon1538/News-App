@@ -9,7 +9,7 @@ import Foundation
 
 struct NewsArticle: Decodable, Equatable {
     static func == (lhs: NewsArticle, rhs: NewsArticle) -> Bool {
-        lhs.url == rhs.url
+        (lhs.url == rhs.url) && (lhs.content ?? "" == rhs.content ?? "")
     }
     
     var source: NewsArticleSource?
