@@ -57,7 +57,7 @@ class ViewController: UIViewController {
 private extension ViewController {
     
     func setup() {
-        view.backgroundColor = .green
+        view.backgroundColor = #colorLiteral(red: 0.03453363478, green: 0.1120286658, blue: 0.3060317636, alpha: 1)
         collectionView.dataSource = dataSource
         addCollectionView()
     }
@@ -71,7 +71,25 @@ private extension ViewController {
         return UICollectionViewDiffableDataSource(collectionView: collectionView) { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsArticleCollectionViewCell.cellId, for: indexPath) as! NewsArticleCollectionViewCell
             cell.articleNameLabel.text = item.articleTitle
-            cell.backgroundColor = .red
+            cell.articleDescription.text = item.articleDescription
+            if let imageURL = item.imageURL {
+                cell.articleImageView.isHidden = false
+                cell.urlForImage = imageURL
+                self.viewModel.loadImageData(url: imageURL) { imageData in
+                    DispatchQueue.global(qos: .background).async {
+                        if cell.urlForImage == imageURL {
+                            if let image = UIImage(data: imageData) {
+                                DispatchQueue.main.async {
+                                    cell.articleImageView.image = image
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                cell.articleImageView.isHidden = true
+            }
+            cell.backgroundColor = .clear
             return cell
         }
     }

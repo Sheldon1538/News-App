@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let mainViewController = ViewController(viewModel: TrendingNewsViewModel(apiService: APIService()))
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
+        mainNavigationController.navigationBar.barStyle = .black
         mainNavigationController.navigationBar.prefersLargeTitles = true
         
         window?.rootViewController = mainNavigationController

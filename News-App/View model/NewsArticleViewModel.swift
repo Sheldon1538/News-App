@@ -11,8 +11,12 @@ final class NewsArticleViewModel: Hashable {
     
     private let newsArticle: NewsArticle
     
-    private var url: String {
-        return newsArticle.url ?? UUID().uuidString
+    var url: String {
+        return newsArticle.url
+    }
+    
+    var imageURL: String? {
+        return newsArticle.urlToImage
     }
     
     init(newsArticle: NewsArticle) {

@@ -48,6 +48,18 @@ final class TrendingNewsViewModel: TrendingNewsViewModelProtocol {
     }
     
     func loadImageData(url: String, completion: @escaping (Data) -> Void) {
-        
+        if let cachedImageData = imageDataCache.object(forKey: url as NSString) {
+            completion(cachedImageData as Data)
+        } else {
+            apiService.loadData(url: url) { (result) in
+                switch result {
+                case .success(let data):
+                    self.imageDataCache.setObject(data as NSData, forKey: url as NSString)
+                    completion(data)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
