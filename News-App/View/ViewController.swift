@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: newsCompLayout.layout)
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
         collectionView.register(NewsArticleCollectionViewCell.self, forCellWithReuseIdentifier: NewsArticleCollectionViewCell.cellId)
         return collectionView
     }()
@@ -63,7 +64,7 @@ private extension ViewController {
         addCollectionView()
     }
     
-    private func addCollectionView() {
+    func addCollectionView() {
         view.addSubview(collectionView)
         collectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
@@ -94,10 +95,20 @@ private extension ViewController {
         }
     }
     
+    func pushDetailsController(newsArticle: NewsArticleViewModel) {
+        let detailsController = NewsArticleDetailsViewController(newsArticle: newsArticle)
+        navigationController?.pushViewController(detailsController, animated: true)
+    }
 }
 
 extension ViewController {
     fileprivate enum Section {
         case main
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushDetailsController(newsArticle: newsArticles[indexPath.row])
     }
 }
