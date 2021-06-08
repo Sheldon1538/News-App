@@ -7,12 +7,8 @@
 
 import Foundation
 
-protocol TrendingNewsViewModelProtocol: ViewModelImageRepresentable, AnyObject {
+protocol TrendingNewsViewModelProtocol: AnyObject {
     var  didUpdateNews: (([NewsArticleViewModel]) -> Void)? { get set }
-}
-
-protocol ViewModelImageRepresentable {
-    func loadImageData(url: String, completion: @escaping(Data) -> Void)
 }
 
 final class TrendingNewsViewModel: TrendingNewsViewModelProtocol {
@@ -43,22 +39,6 @@ final class TrendingNewsViewModel: TrendingNewsViewModelProtocol {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func loadImageData(url: String, completion: @escaping (Data) -> Void) {
-        if let cachedImageData = imageDataCache.object(forKey: url as NSString) {
-            completion(cachedImageData as Data)
-        } else {
-            apiService.loadData(url: url) { (result) in
-                switch result {
-                case .success(let data):
-                    self.imageDataCache.setObject(data as NSData, forKey: url as NSString)
-                    completion(data)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
             }
         }
     }

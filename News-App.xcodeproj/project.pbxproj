@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		B58A8CFB266F9FE000D3BF71 /* NewsArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CFA266F9FE000D3BF71 /* NewsArticleCollectionViewCell.swift */; };
 		B58A8CFD266FA05D00D3BF71 /* UICollectionViewCell + Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CFC266FA05D00D3BF71 /* UICollectionViewCell + Identifier.swift */; };
 		B58A8CFF266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8CFE266FAFE600D3BF71 /* NewsArticleDetailsViewController.swift */; };
+		B58A8D02266FD0AD00D3BF71 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = B58A8D01266FD0AD00D3BF71 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58A8D02266FD0AD00D3BF71 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,9 @@
 			dependencies = (
 			);
 			name = "News-App";
+			packageProductDependencies = (
+				B58A8D01266FD0AD00D3BF71 /* Nuke */,
+			);
 			productName = "News-App";
 			productReference = B561BDFA266F782D00691D21 /* News-App.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +213,9 @@
 				Base,
 			);
 			mainGroup = B561BDF1266F782D00691D21;
+			packageReferences = (
+				B58A8D00266FD0AD00D3BF71 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = B561BDFB266F782D00691D21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,6 +453,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B58A8D00266FD0AD00D3BF71 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B58A8D01266FD0AD00D3BF71 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B58A8D00266FD0AD00D3BF71 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B561BDF2266F782D00691D21 /* Project object */;
 }

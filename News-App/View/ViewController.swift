@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class ViewController: UIViewController {
     
@@ -74,18 +75,7 @@ private extension ViewController {
             cell.articleDescription.text = item.articleDescription
             if let imageURL = item.imageURL {
                 cell.articleImageView.isHidden = false
-                cell.urlForImage = imageURL
-                self.viewModel.loadImageData(url: imageURL) { imageData in
-                    DispatchQueue.global(qos: .background).async {
-                        if cell.urlForImage == imageURL {
-                            if let image = UIImage(data: imageData) {
-                                DispatchQueue.main.async {
-                                    cell.articleImageView.image = image
-                                }
-                            }
-                        }
-                    }
-                }
+                Nuke.loadImage(with: imageURL, into: cell.articleImageView)
             } else {
                 cell.articleImageView.isHidden = true
             }

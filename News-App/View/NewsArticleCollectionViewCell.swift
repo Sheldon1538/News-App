@@ -8,7 +8,6 @@
 import UIKit
 
 class NewsArticleCollectionViewCell: UICollectionViewCell {
-    var urlForImage: String = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
