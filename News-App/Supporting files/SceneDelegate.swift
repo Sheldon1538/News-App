@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let mainViewController = ViewController()
+        let mainViewController = ViewController(viewModel: TrendingNewsViewModel(apiService: APIService()))
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
         mainNavigationController.navigationBar.prefersLargeTitles = true
         

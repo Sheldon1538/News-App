@@ -10,5 +10,5 @@ import Foundation
 struct NewsResponse: Decodable {
     var status: String?
     var totalResults: Int?
-    var articles: [NewsArticle?]
+    var articles: [NewsArticle]
 }
